@@ -78,12 +78,6 @@ public class BenchmarkTest01892 extends HttpServlet {
             javax.xml.xpath.XPathFactory xpf = javax.xml.xpath.XPathFactory.newInstance();
             javax.xml.xpath.XPath xp = xpf.newXPath();
 
-            String expression = "/Employees/Employee[@emplid='" + bar + "']";
-            org.w3c.dom.NodeList nodeList =
-                    (org.w3c.dom.NodeList)
-                            xp.compile(expression)
-                                    .evaluate(xmlDocument, javax.xml.xpath.XPathConstants.NODESET);
-
             response.getWriter().println("Your query results are: <br/>");
 
             for (int i = 0; i < nodeList.getLength(); i++) {
